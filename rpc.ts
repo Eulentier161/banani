@@ -196,7 +196,7 @@ export class RPCWithBackup extends RPC {
     this.rpc_urls = rpc_urls;
     this.timeout = timeout;
   }
-  async call(payload: Record<string, any>): Promise<Record<string, any>> {
+  async call<T extends Record<string, any>>(payload: Record<string, any>): Promise<T> {
     let i = 0;
     while (true) {
       try {
